@@ -457,7 +457,7 @@ template {
 
 .lock .lockTitle {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .lock .lockTitle h1 {
@@ -482,7 +482,7 @@ template {
   position: relative;
   width: 100%;
   text-align: center;
-  font-size: 188px;
+  font-size: 150px;
   margin-bottom: 0px;
   margin-top: 0px;
 }
@@ -528,11 +528,11 @@ template {
 
 .lock .lockFooter .btnLock {
   background: linear-gradient(318.21deg, #11A8FD 14.05%, #0081C9 85.29%);
-  width: 125px;
-  height: 125px;
+  width: 105px;
+  height: 105px;
   border-radius: 50%;
   position: relative;
-  margin-top: 45px;
+  margin-top: 15px;
   -webkit-filter: drop-shadow(0px 0px 10px rgba(99, 207, 255, 0.5)) drop-shadow(0px 0px 25px rgba(38, 171, 247, 0.2));
           filter: drop-shadow(0px 0px 10px rgba(99, 207, 255, 0.5)) drop-shadow(0px 0px 25px rgba(38, 171, 247, 0.2));
   border: 1px solid #016bb8;
@@ -551,15 +551,6 @@ template {
 .lock .lockFooter p {
   font-weight: 500;
   color: #FDFDFD;
-}
-
-body {
-  overflow: hidden;
-}
-
-body main {
-  overflow: hidden;
-  position: relative;
 }
 
 .index {
@@ -802,7 +793,16 @@ body main {
           transform: scale(1.2);
 }
 
-.index .ac {
+body {
+  overflow: hidden;
+}
+
+body main {
+  overflow: hidden;
+  position: relative;
+}
+
+.ac {
   position: fixed;
   width: 100%;
   height: 130px;
@@ -813,7 +813,7 @@ body main {
   border: #424750 2px solid;
 }
 
-.index .ac:after {
+.ac:after {
   content: "";
   width: 100%;
   background: #272a30;
@@ -822,7 +822,7 @@ body main {
   bottom: 0;
 }
 
-.index .ac .acHeader {
+.ac .acHeader {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -837,7 +837,7 @@ body main {
   position: relative;
 }
 
-.index .ac .acHeader:after {
+.ac .acHeader:after {
   -webkit-box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.25);
           box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
@@ -852,7 +852,7 @@ body main {
   width: 15%;
 }
 
-.index .ac .acHeader div:nth-child(1) {
+.ac .acHeader div:nth-child(1) {
   margin-left: 40px;
   margin-top: 25px;
   margin-bottom: 40px;
@@ -868,18 +868,18 @@ body main {
           justify-content: center;
 }
 
-.index .ac .acHeader div:nth-child(1) p,
-.index .ac .acHeader div:nth-child(1) h4 {
+.ac .acHeader div:nth-child(1) p,
+.ac .acHeader div:nth-child(1) h4 {
   margin: 0;
 }
 
-.index .ac .acHeader div:nth-child(1) p {
+.ac .acHeader div:nth-child(1) p {
   margin-top: 8px;
   color: #7F8489;
   max-width: 215px;
 }
 
-.index .ac .acHeader .btnOn {
+.ac .acHeader .btnOn {
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -892,7 +892,7 @@ body main {
           box-shadow: 10px 15px 40px #000000, -10px -15px 40px #2f393d;
 }
 
-.index .ac .acHeader .btnOn img {
+.ac .acHeader .btnOn img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -902,11 +902,86 @@ body main {
   height: 20px;
 }
 
-.index .ac .acContent {
+.ac .acContent {
   width: 100%;
   height: 100vh;
   position: absolute;
   background: #272a30;
   outline: #424750 2px solid;
+}
+
+.ac .acContent .degre {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ac .acContent .degre .outerCircle {
+  z-index: 2;
+  background: linear-gradient(318.21deg, #202428 14.05%, #131314 85.29%);
+  -webkit-box-shadow: 20px 20px 70px #141415, -20px -20px 70px #485057;
+          box-shadow: 20px 20px 70px #141415, -20px -20px 70px #485057;
+  width: 250px;
+  height: 250px;
+  border-radius: 1000px;
+  position: relative;
+}
+
+.ac .acContent .degre .outerCircle #container {
+  position: absolute;
+  width: 215px;
+  height: 215px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.ac .acContent .degre .outerCircle #container:after {
+  content: "";
+  position: absolute;
+  width: 215px;
+  height: 215px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-box-shadow: inset 0px 1px 3px rgba(170, 187, 222, 0.542887);
+          box-shadow: inset 0px 1px 3px rgba(170, 187, 222, 0.542887);
+}
+
+.ac .acContent .degre .outerCircle #container .progressbar-text {
+  color: white;
+  text-align: center;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+  font-weight: 900;
+  font-size: 40px;
+}
+
+.ac .acContent .degre .outerCircle #container .temp {
+  color: #FDFDFD;
+  font-size: 18px;
+  text-align: center;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.ac .acContent .degre .outerCircle #container .temp::first-line {
+  font-weight: 900;
+  font-size: 40px;
 }
 /*# sourceMappingURL=style.css.map */

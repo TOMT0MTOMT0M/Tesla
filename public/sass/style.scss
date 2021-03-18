@@ -3,6 +3,7 @@
 @import "base.scss";
 @import "font.scss";
 @import "lock.scss";
+@import "index.scss";
 
 body {
     // border: black 1px solid;
@@ -14,252 +15,145 @@ body {
     }
 }
 
-.index {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: 1s all ease-in;
-    height: calc(var(--vh, 1vh) * 100);
+.ac {
+    position: fixed;
     width: 100%;
-    display: flex;
-    justify-content: start;
-    flex-direction: column;
-    align-items: center;
-    background: $background;
-
-    h2 {
-        font-size: 18px;
+    height: 130px;
+    bottom: 0;
+    background: #272a30;
+    border-top-right-radius: 60px;
+    border-top-left-radius: 60px;
+    border: rgba(66, 71, 80, 1) 2px solid;
+    &:after {
+        content: "";
+        width: 100%;
+        background: #272a30;
+        height: 3px;
+        position: absolute;
+        bottom: 0;
     }
-    h3 {
-        margin: 0;
-    }
-    .indexHeader {
+    .acHeader {
         display: flex;
+        width: 100%;
+        height: 100%;
         justify-content: space-between;
         align-items: center;
-        width: 100%;
-        margin-top: 40px;
-        .headerTitle {
-            text-align: center;
+        position: relative;
+        &:after {
+            box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 20px;
+            content: "";
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #17181c;
+            height: 4px;
+            width: 15%;
         }
-        .btnAccount {
-            background: $backgroundLight;
-            width: 63px;
-            height: 63px;
-            margin-right: 40px;
+        div:nth-child(1) {
+            margin-left: 40px;
+            margin-top: 25px;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            p,
+            h4 {
+                margin: 0;
+            }
+            p {
+                margin-top: 8px;
+                color: $grey;
+                max-width: 215px;
+            }
+        }
+        .btnOn {
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
+            margin-right: 40px;
             position: relative;
-            box-shadow: 7px 7px 30px #1f2427, -7px -7px 30px #485057;
-
+            z-index: 1;
+            background: linear-gradient(320.66deg, #016bb8 14.75%, #11a8fd 84.81%);
+            border: 1px solid #016bb8;
+            box-shadow: 10px 15px 40px #000000, -10px -15px 40px #2f393d;
             img {
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                width: 18px;
-                height: 18px;
                 transform: translate(-50%, -50%);
-            }
-        }
-        .btnMenu {
-            background: $backgroundLight;
-            width: 63px;
-            height: 63px;
-            margin-left: 40px;
-            border-radius: 50%;
-            position: relative;
-            box-shadow: 7px 7px 30px #1f2427, -7px -7px 30px #485057;
-
-            .menu1,
-            .menu2 {
-                background: $grey;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 16px;
-                height: 2px;
-                border-radius: 5px;
-            }
-            .menu1 {
-                transform: translate(-50%, -300%);
-            }
-            .menu2 {
-                transform: translate(-50%, 50%) scaleX(0.6);
-                transform-origin: left;
+                width: 20px;
+                height: 20px;
             }
         }
     }
-    .indexCar {
-        margin-top: 0px;
+    .acContent {
         width: 100%;
-        padding-left: 40px;
-        padding-right: 40px;
-        h4 {
-            margin-top: 0px;
-        }
-        .teslaIndex {
-            width: 100%;
-        }
-        .status {
-            display: flex;
-            justify-content: space-between;
-            h2 {
-                img {
-                    width: 15px;
-                    height: 15px;
-                    margin-right: 5px;
-                }
-            }
-            .stats {
-                margin-top: 8px;
-                color: $white;
-                font-weight: 600;
-                margin-left: 20px;
-            }
-        }
-    }
-    .indexInfo {
-        width: 100%;
-        h4 {
-            margin-top: 0px;
-            padding-left: 40px;
-            padding-right: 40px;
-        }
-
-        .scroll {
-            width: 100%;
-            overflow-x: hidden;
-            overflow-y: hidden;
-            white-space: nowrap;
-            transition: 0.3s all ease;
-            .squares {
-                display: inline-flex;
-                user-select: none;
-
-                .engine,
-                .climate,
-                .tires {
-                    margin-right: 32px;
-                    border-radius: 8px;
-                    width: 140px;
-                    height: 140px;
-                    background-color: linear-gradient(138.69deg, #1f2328 0%, #1a1c1f 100%);
-                    border: solid 1px rgba(16, 16, 18, 0.75);
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: end;
-                    padding: 16px;
-                    p {
-                        margin: 0;
-                        margin-bottom: 4px;
-                        color: $white;
-                    }
-                }
-                .engine {
-                    margin-left: 40px;
-                    background: url(../svg/bgEngine.svg);
-                }
-                .climate {
-                    background: url(../svg/bgClimate.svg);
-                }
-                .tires {
-                    background: url(../svg/bgTires.svg);
-                }
-            }
-        }
-    }
-    .navigation {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        padding-left: 40px;
-        padding-right: 40px;
-        color: $white;
-    }
-    .scroll.active {
-        cursor: grabbing;
-        cursor: -webkit-grabbing;
-        transform: scale(1.2);
-    }
-    .ac {
-        position: fixed;
-        width: 100%;
-        height: 130px;
-        bottom: 0;
+        height: 100vh;
+        position: absolute;
         background: #272a30;
-        border-top-right-radius: 60px;
-        border-top-left-radius: 60px;
-        border: rgba(66, 71, 80, 1) 2px solid;
-        &:after {
-            content: "";
-            width: 100%;
-            background: #272a30;
-            height: 3px;
-            position: absolute;
-            bottom: 0;
-        }
-        .acHeader {
-            display: flex;
+        outline: rgba(66, 71, 80, 1) 2px solid;
+        .degre {
             width: 100%;
             height: 100%;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            &:after {
-                box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.25);
-                border-radius: 20px;
-                content: "";
-                position: absolute;
-                top: 10%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background: #17181c;
-                height: 4px;
-                width: 15%;
-            }
-            div:nth-child(1) {
-                margin-left: 40px;
-                margin-top: 25px;
-                margin-bottom: 40px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                p,
-                h4 {
-                    margin: 0;
-                }
-                p {
-                    margin-top: 8px;
-                    color: $grey;
-                    max-width: 215px;
-                }
-            }
-            .btnOn {
-                width: 70px;
-                height: 70px;
-                border-radius: 50%;
-                margin-right: 40px;
+            display: flex;
+            justify-content: center;
+            .outerCircle {
+                z-index: 2;
+                background: linear-gradient(318.21deg, #202428 14.05%, #131314 85.29%);
+                box-shadow: 20px 20px 70px #141415, -20px -20px 70px #485057;
+                width: 250px;
+                height: 250px;
+                border-radius: 1000px;
                 position: relative;
-                z-index: 1;
-                background: linear-gradient(320.66deg, #016bb8 14.75%, #11a8fd 84.81%);
-                border: 1px solid #016bb8;
-                box-shadow: 10px 15px 40px #000000, -10px -15px 40px #2f393d;
-                img {
+                #container {
                     position: absolute;
+                    width: 215px;
+                    height: 215px;
+                    border-radius: 50%;
                     top: 50%;
                     left: 50%;
+                    -webkit-transform: translate(-50%, -50%);
                     transform: translate(-50%, -50%);
-                    width: 20px;
-                    height: 20px;
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        width: 215px;
+                        height: 215px;
+                        border-radius: 50%;
+                        top: 50%;
+                        left: 50%;
+                        -webkit-transform: translate(-50%, -50%);
+                        transform: translate(-50%, -50%);
+                        box-shadow: inset 0px 1px 3px rgba(170, 187, 222, 0.542887)
+                    }
+                    .progressbar-text {
+                        color: rgb(255, 255, 255);
+                        text-align: center;
+                        top: 30%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        position: absolute;
+                        font-weight: 900;
+                        font-size: 40px;
+                    }
+                    .temp {
+                        &::first-line {
+                            font-weight: 900;
+                            font-size: 40px;
+                        }
+                        color: $white;
+                        font-size: 18px;
+                        text-align: center;
+                        top: 30%;
+                        left: 50%;
+                        -webkit-transform: translate(-50%, -50%);
+                        transform: translate(-50%, -50%);
+                        position: absolute;
+                    }
                 }
             }
-        }
-        .acContent {
-            width: 100%;
-            height: 100vh;
-            position: absolute;
-            background: #272a30;
-            outline: rgba(66, 71, 80, 1) 2px solid;
         }
     }
 }

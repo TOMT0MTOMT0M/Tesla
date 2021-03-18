@@ -13,6 +13,9 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
         integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
     <script src="public\js\jquery.ui.touch-punch.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.1.0/progressbar.min.js"
+        integrity="sha512-EZhmSl/hiKyEHklogkakFnSYa5mWsLmTC4ZfvVzhqYNLPbXKAXsjUYRf2O9OlzQN33H0xBVfGSEIUeqt9astHQ=="
+        crossorigin="anonymous"></script>
 
 </head>
 
@@ -97,11 +100,38 @@
                 <h4>Navigation</h4>
                 <p>History</p>
             </div>
-            <footer class="ac"><header class="acHeader"><div><h4>A/C is ON</h4><p>Tap to turn off or swipe up for a fast setup</p></div><div class="btnOn"><img src="public\svg\power.svg" alt=""></div></header><div class="acContent"></div></footer>
+            <footer class="ac">
+                <header class="acHeader">
+                    <div>
+                        <h4>A/C is ON</h4>
+                        <p>Tap to turn off or swipe up for a fast setup</p>
+                    </div>
+                    <div class="btnOn"><img src="public\svg\power.svg" alt=""></div>
+                </header>
+                <div class="acContent">
+                    <section class="degre">
+                        <div class="outerCircle">
+                            <svg viewBox="0 0 100 100" style="position:absolute;top: 18px;left: 18px;display: block; width: 86%;z-index:-1;">
+                                <path d="M 50,50 m 0,-40 a 40,40 0 1 1 0,80 a 40,40 0 1 1 0,-80"
+                                    stroke="rgb(17,168,253)" stroke-width="20" fill-opacity="0"
+                                    style="stroke: #1F2124;"></path>
+                            </svg>
+                            <div id="container">
+                            </div>
+                        </div>
+
+                        
+                </div>
+                </section>
+                <section class="speed"></section>
+                <section class="mode"></section>
+                </div>
+            </footer>
 
         </article>
     </main>
     <footer></footer>
+    <script src="public\js\loader.js"></script>
     <script src="public\js\ac.js"></script>
     <script src="public\js\vh.js"></script>
     <script src="public\js\index.js"></script>
