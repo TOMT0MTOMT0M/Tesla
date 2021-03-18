@@ -12,7 +12,7 @@
     background: $background;
     z-index: 3;
     position: relative;
-    display: none;
+
     .lockHeader {
         padding-top: 42px;
         padding-right: 42px;
@@ -98,6 +98,9 @@
             position: relative;
             margin-top: 45px;
             filter: drop-shadow(0px 0px 10px rgba(99, 207, 255, 0.5)) drop-shadow(0px 0px 25px rgba(38, 171, 247, 0.2));
+
+            border: 1px solid #016bb8;
+            -webkit-box-shadow: 10px 15px 40px #000000, -10px -15px 40px #2f393d;
             box-shadow: 10px 15px 40px #000000, -10px -15px 40px #2f393d;
             img {
                 position: absolute;

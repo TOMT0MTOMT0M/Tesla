@@ -22,7 +22,7 @@ body {
     height: calc(var(--vh, 1vh) * 100);
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     flex-direction: column;
     align-items: center;
     background: $background;
@@ -140,8 +140,8 @@ body {
                 .tires {
                     margin-right: 32px;
                     border-radius: 8px;
-                    width: 100px;
-                    height: 110px;
+                    width: 140px;
+                    height: 140px;
                     background-color: linear-gradient(138.69deg, #1f2328 0%, #1a1c1f 100%);
                     border: solid 1px rgba(16, 16, 18, 0.75);
                     display: flex;
@@ -190,6 +190,14 @@ body {
         border-top-right-radius: 60px;
         border-top-left-radius: 60px;
         border: rgba(66, 71, 80, 1) 2px solid;
+        &:after {
+            content: "";
+            width: 100%;
+            background: #272a30;
+            height: 3px;
+            position: absolute;
+            bottom: 0;
+        }
         .acHeader {
             display: flex;
             width: 100%;
@@ -251,9 +259,7 @@ body {
             height: 100vh;
             position: absolute;
             background: #272a30;
-            border-right: rgba(66, 71, 80, 1) 2px solid;
-            border-left: rgba(66, 71, 80, 1) 2px solid;
-        
+            outline: rgba(66, 71, 80, 1) 2px solid;
         }
     }
 }
