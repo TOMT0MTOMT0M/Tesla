@@ -26,7 +26,7 @@ body {
     flex-direction: column;
     align-items: center;
     background: $background;
-    
+
     h2 {
         font-size: 18px;
     }
@@ -118,7 +118,7 @@ body {
         width: 100%;
         h4 {
             padding-left: 40px;
-        padding-right: 40px;
+            padding-right: 40px;
         }
 
         .scroll {
@@ -129,7 +129,8 @@ body {
             transition: 0.3s all ease;
             .squares {
                 display: inline-flex;
-                
+                user-select: none;
+
                 .engine,
                 .climate,
                 .tires {
@@ -174,5 +175,5 @@ body {
         cursor: grabbing;
         cursor: -webkit-grabbing;
         transform: scale(1.2);
-      }
+    }
 }
