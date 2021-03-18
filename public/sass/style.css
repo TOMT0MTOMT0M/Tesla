@@ -405,7 +405,7 @@ template {
   display: flex;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
-          justify-content: start;
+          justify-content: flex-start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -428,7 +428,7 @@ template {
   width: 100%;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
-          justify-content: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -527,6 +527,8 @@ template {
 }
 
 .lock .lockFooter .btnLock {
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
   background: linear-gradient(318.21deg, #11A8FD 14.05%, #0081C9 85.29%);
   width: 105px;
   height: 105px;
@@ -538,6 +540,13 @@ template {
   border: 1px solid #016bb8;
   -webkit-box-shadow: 10px 15px 40px #000000, -10px -15px 40px #2f393d;
   box-shadow: 10px 15px 40px #000000, -10px -15px 40px #2f393d;
+}
+
+.lock .lockFooter .btnLock:hover, .lock .lockFooter .btnLock:active {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .lock .lockFooter .btnLock img {
@@ -566,7 +575,7 @@ template {
   display: flex;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
-          justify-content: start;
+          justify-content: flex-start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -730,6 +739,8 @@ template {
 .index .indexInfo .scroll .squares .engine,
 .index .indexInfo .scroll .squares .climate,
 .index .indexInfo .scroll .squares .tires {
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
   margin-right: 32px;
   border-radius: 8px;
   width: 140px;
@@ -745,8 +756,17 @@ template {
           flex-direction: column;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
-          justify-content: end;
+          justify-content: flex-end;
   padding: 16px;
+}
+
+.index .indexInfo .scroll .squares .engine:hover,
+.index .indexInfo .scroll .squares .climate:hover,
+.index .indexInfo .scroll .squares .tires:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-box-shadow: 1px 1px 11px 5px rgba(0, 0, 0, 0.75);
+          box-shadow: 1px 1px 11px 5px rgba(0, 0, 0, 0.75);
 }
 
 .index .indexInfo .scroll .squares .engine p,
@@ -803,10 +823,12 @@ body main {
 }
 
 .ac {
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
   position: fixed;
   width: 100%;
   height: 130px;
-  bottom: 0;
+  bottom: -3%;
   background: #272a30;
   border-top-right-radius: 60px;
   border-top-left-radius: 60px;
@@ -879,7 +901,14 @@ body main {
   max-width: 215px;
 }
 
+.ac .acHeader .btnOnActive {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
 .ac .acHeader .btnOn {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -904,15 +933,23 @@ body main {
 
 .ac .acContent {
   width: 100%;
-  height: 100vh;
   position: absolute;
   background: #272a30;
   outline: #424750 2px solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .ac .acContent .degre {
   width: 100%;
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -940,7 +977,7 @@ body main {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .ac .acContent .degre .outerCircle #container:after {
@@ -952,7 +989,7 @@ body main {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   -webkit-box-shadow: inset 0px 1px 3px rgba(170, 187, 222, 0.542887);
           box-shadow: inset 0px 1px 3px rgba(170, 187, 222, 0.542887);
 }
@@ -976,12 +1013,145 @@ body main {
   top: 30%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   position: absolute;
 }
 
 .ac .acContent .degre .outerCircle #container .temp::first-line {
   font-weight: 900;
   font-size: 40px;
+}
+
+.ac .acContent .speed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.ac .acContent .speed .speedSetting {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ac .acContent .speed .speedSetting .speedNumbers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 90%;
+  color: #7F8489;
+  font-size: 14px;
+}
+
+.ac .acContent .speed .speedSetting .speedBar {
+  position: relative;
+  width: 90%;
+  height: 9px;
+  -webkit-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.75), inset -2px -2px 2px #4e5154;
+          box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.75), inset -2px -2px 2px #4e5154;
+  border-radius: 100px;
+  margin-bottom: 50px;
+}
+
+.ac .acContent .speed .speedSetting .speedBar .innerDiv {
+  width: 25%;
+  position: absolute;
+  height: 6px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 48.67%, rgba(255, 255, 255, 0.04) 59.86%), linear-gradient(89.97deg, #016bb8 2.65%, #0782db 30.1%, #0f9ceb 59.17%, #11a8fd 101.95%);
+  border-radius: 100px;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+}
+
+.ac .acContent .speed .speedSetting .speedBar .barCircle {
+  top: 50%;
+  left: calc(25% - 14px);
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(320.66deg, #141515 14.75%, #2e3236 84.81%);
+  border: 1px solid #282b2e;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 4px 6px 20px rgba(0, 0, 0, 0.35);
+          box-shadow: 4px 6px 20px rgba(0, 0, 0, 0.35);
+  border-radius: 30px;
+}
+
+.ac .acContent .mode h4 {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 24px;
+}
+
+.ac .acContent .mode .btnMode {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 32px;
+}
+
+.ac .acContent .mode .btnMode div {
+  width: 72px;
+}
+
+.ac .acContent .mode .btnMode div p {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 16px;
+  margin-top: 0;
+  color: #7F8489;
+}
+
+.ac .acContent .mode .btnMode div div {
+  width: 72px;
+  height: 72px;
+  border-radius: 100px;
+  position: relative;
+  background: linear-gradient(320.66deg, #2f353a 14.75%, #1c1f22 84.81%);
+  -webkit-box-shadow: 14px 14px 40px rgba(16, 16, 18, 0.75), -7px -7px 30px #262e32;
+          box-shadow: 14px 14px 40px rgba(16, 16, 18, 0.75), -7px -7px 30px #262e32;
+}
+
+.ac .acContent .mode .btnMode div div img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 /*# sourceMappingURL=style.css.map */

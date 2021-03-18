@@ -1,7 +1,8 @@
 $(function () {
     $(".ac").draggable({
         axis: 'y',
-        containment: 'parent'
+        containment: 'parent',
+        handle: $(".acHeader"),
     });
     // Get the axis option, after initialization.
     var axis = $('.ac').draggable('option', 'axis');

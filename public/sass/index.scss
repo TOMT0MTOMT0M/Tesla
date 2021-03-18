@@ -6,7 +6,7 @@
     height: calc(var(--vh, 1vh) * 100);
     width: 100%;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     flex-direction: column;
     align-items: center;
     background: $background;
@@ -123,6 +123,11 @@
                 .engine,
                 .climate,
                 .tires {
+                    &:hover{
+                        transform: scale(0.9);
+                        box-shadow: 1px 1px 11px 5px rgba(0,0,0,0.75);
+                    }
+                    transition: 0.3s all ease;
                     margin-right: 32px;
                     border-radius: 8px;
                     width: 140px;
@@ -131,7 +136,7 @@
                     border: solid 1px rgba(16, 16, 18, 0.75);
                     display: flex;
                     flex-direction: column;
-                    justify-content: end;
+                    justify-content: flex-end;
                     padding: 16px;
                     p {
                         margin: 0;

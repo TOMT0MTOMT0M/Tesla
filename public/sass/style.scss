@@ -16,10 +16,11 @@ body {
 }
 
 .ac {
+    transition: all 0.1s linear;
     position: fixed;
     width: 100%;
     height: 130px;
-    bottom: 0;
+    bottom: -3%;
     background: #272a30;
     border-top-right-radius: 60px;
     border-top-left-radius: 60px;
@@ -68,7 +69,12 @@ body {
                 max-width: 215px;
             }
         }
+        .btnOnActive {
+            -webkit-filter:grayscale(1) ;
+                    filter:grayscale(1) ;
+        }
         .btnOn {
+            transition: all 1s ease;
             width: 70px;
             height: 70px;
             border-radius: 50%;
@@ -90,13 +96,14 @@ body {
     }
     .acContent {
         width: 100%;
-        height: 100vh;
         position: absolute;
         background: #272a30;
         outline: rgba(66, 71, 80, 1) 2px solid;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         .degre {
             width: 100%;
-            height: 100%;
             display: flex;
             justify-content: center;
             .outerCircle {
@@ -114,7 +121,6 @@ body {
                     border-radius: 50%;
                     top: 50%;
                     left: 50%;
-                    -webkit-transform: translate(-50%, -50%);
                     transform: translate(-50%, -50%);
                     &:after {
                         content: "";
@@ -124,9 +130,8 @@ body {
                         border-radius: 50%;
                         top: 50%;
                         left: 50%;
-                        -webkit-transform: translate(-50%, -50%);
                         transform: translate(-50%, -50%);
-                        box-shadow: inset 0px 1px 3px rgba(170, 187, 222, 0.542887)
+                        box-shadow: inset 0px 1px 3px rgba(170, 187, 222, 0.542887);
                     }
                     .progressbar-text {
                         color: rgb(255, 255, 255);
@@ -148,9 +153,103 @@ body {
                         text-align: center;
                         top: 30%;
                         left: 50%;
-                        -webkit-transform: translate(-50%, -50%);
                         transform: translate(-50%, -50%);
                         position: absolute;
+                    }
+                }
+            }
+        }
+
+        .speed {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            .speedSetting {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .speedNumbers {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 90%;
+                    color: $grey;
+                    font-size: 14px;
+                }
+                .speedBar {
+                    position: relative;
+                    width: 90%;
+                    height: 9px;
+                    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.75), inset -2px -2px 2px #4e5154;
+                    border-radius: 100px;
+                    margin-bottom: 50px;
+                    .innerDiv {
+                        width: 25%;
+                        position: absolute;
+                        height: 6px;
+                        background: linear-gradient(
+                                180deg,
+                                rgba(0, 0, 0, 0.02) 48.67%,
+                                rgba(255, 255, 255, 0.04) 59.86%
+                            ),
+                            linear-gradient(89.97deg, #016bb8 2.65%, #0782db 30.1%, #0f9ceb 59.17%, #11a8fd 101.95%);
+                        border-radius: 100px;
+                        top: 50%;
+                        left: 0;
+                        transform: translate(0%, -50%);
+                    }
+                    .barCircle {
+                        top: 50%;
+                        left: calc(25% - 14px);
+                        transform: translate(0%, -50%);
+                        position: absolute;
+                        width: 28px;
+                        height: 28px;
+                        background: linear-gradient(320.66deg, #141515 14.75%, #2e3236 84.81%);
+                        border: 1px solid #282b2e;
+                        box-sizing: border-box;
+                        box-shadow: 4px 6px 20px rgba(0, 0, 0, 0.35);
+                        border-radius: 30px;
+                    }
+                }
+            }
+        }
+
+        .mode {
+            h4 {
+                text-align: center;
+                margin-top: 0px;
+                margin-bottom: 24px;
+            }
+            .btnMode {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                margin-bottom: 32px;
+                div {
+                    width: 72px;
+                    p {
+                        text-align: center;
+                        width: 100%;
+                        margin-bottom: 16px;
+                        margin-top: 0;
+                        color: $grey;
+                    }
+                    div {
+                        width: 72px;
+                        height: 72px;
+                        border-radius: 100px;
+                        position: relative;
+                        background: linear-gradient(320.66deg, #2f353a 14.75%, #1c1f22 84.81%);
+                        box-shadow: 14px 14px 40px rgba(16, 16, 18, 0.75), -7px -7px 30px #262e32;
+                        img {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
                     }
                 }
             }

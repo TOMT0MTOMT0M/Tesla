@@ -5,7 +5,8 @@ function openApp() {
     lock.classList.toggle("lockOpen")
 }
 
-openLock.addEventListener("click", openApp)
+openLock.addEventListener("touchend", openApp)
+openLock.addEventListener("mouseleave", openApp)
 
 const slider = document.querySelector('.scroll');
 let isDown = false;

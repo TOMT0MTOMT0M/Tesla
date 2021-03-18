@@ -1,4 +1,6 @@
-let btn = document.querySelector(".btnOn")
+let btn = document.querySelector(".btnOn");
+let acOpen = false;
+let ac = document.querySelector(".ac");
 let bar = new ProgressBar.Circle(container, {
     color: '#ccc',
     // This has to be the same size as the maximum width to
@@ -16,20 +18,28 @@ let bar = new ProgressBar.Circle(container, {
         circle.path.setAttribute('stroke', state.color);
         circle.path.setAttribute('stroke-width', state.width);
 
-        var value = Math.round(circle.value() * 30);
+        let value = Math.round(circle.value() * 30);
         if (value === 0) {
             circle.setText('');
         } else {
-            circle.setText(value+"°");
+            circle.setText(value + "°C");
         }
 
     }
 });
 
 function random() {
-    var precision = 10; // 2 decimals
-    var randomnum = Math.floor(Math.random() * (2 * precision - 1 * precision) + 1 * precision) / (1 * precision);
+    btn.classList.add("btnOnActive");
+    let precision = 10; // 2 decimals
+    let randomnum = Math.floor(Math.random() * (2 * precision - 1 * precision) + 1 * precision) / (1 * precision);
     bar.animate((randomnum - 1));  // Number from 0.0 to 1.0 </script>
+    if (acOpen === false) {
+        ac.style.top = "340px";
+        acOpen = true;
+    } else {
+        btn.removeEventListener("click", random);
+    }
+
 }
 btn.addEventListener("click", random);
 
