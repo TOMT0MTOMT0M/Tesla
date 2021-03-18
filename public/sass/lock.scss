@@ -12,6 +12,7 @@
     background: $background;
     z-index: 3;
     position: relative;
+    display: none;
     .lockHeader {
         padding-top: 42px;
         padding-right: 42px;
@@ -40,7 +41,6 @@
     .lockTitle {
         text-align: center;
         margin-top: 30px;
-        margin-bottom: 30px;
         h1 {
             letter-spacing: 0.02em;
             text-shadow: 0px 0px 4px rgba(255, 255, 255, 0.25);
