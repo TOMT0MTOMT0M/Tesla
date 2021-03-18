@@ -3,7 +3,7 @@
 }
 .lock {
     transition: 1s all ease-in;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     width: 100%;
     display: flex;
     justify-content: start;
@@ -88,6 +88,8 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        position: fixed;
+        bottom: 0;
         .btnLock {
             background: $blue;
             width: 125px;
