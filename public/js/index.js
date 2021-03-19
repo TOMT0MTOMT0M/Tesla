@@ -1,12 +1,22 @@
 let lock = document.querySelector(".lock")
 let openLock = document.querySelector(".btnLock")
+let car = document.querySelector(".teslaIndex")
+let light = document.querySelector(".lightTeslaIndex")
+
 
 function openApp() {
+    let rangeText = document.querySelector(".range .stats")
+    let batText = document.querySelector(".battery .stats")
+    let range = Math.floor(Math.random() * 1000) + 1;
+    rangeText.innerHTML = range + "km";
+    document.querySelector(".km p").innerHTML = range + "km";
+    let battery = Math.floor(Math.random() * 100) + 1;
+    batText.innerHTML = battery + "%";
     lock.classList.toggle("lockOpen")
 }
 
 openLock.addEventListener("touchend", openApp)
-openLock.addEventListener("mouseleave", openApp)
+openLock.addEventListener("click", openApp)
 
 const slider = document.querySelector('.scroll');
 let isDown = false;
@@ -59,3 +69,9 @@ slider.addEventListener('touchmove', (e) => {
     slider.scrollLeft = scrollLeft - walk;
     console.log(walk);
 });
+
+function toggleAnimationCar(){
+    light.classList.toggle("animLight");
+    console.log("test")
+}
+car.addEventListener("click", toggleAnimationCar)

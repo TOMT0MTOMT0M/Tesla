@@ -70,8 +70,8 @@ body {
             }
         }
         .btnOnActive {
-            -webkit-filter:grayscale(1) ;
-                    filter:grayscale(1) ;
+            -webkit-filter: grayscale(1);
+            filter: grayscale(1);
         }
         .btnOn {
             transition: all 1s ease;
@@ -202,8 +202,7 @@ body {
                     }
                     .barCircle {
                         top: 50%;
-                        left: calc(25% - 14px);
-                        transform: translate(0%, -50%);
+                        left: 25%;
                         position: absolute;
                         width: 28px;
                         height: 28px;
@@ -218,11 +217,13 @@ body {
         }
 
         .mode {
+            transition: 1s ease all;
             h4 {
                 text-align: center;
                 margin-top: 0px;
                 margin-bottom: 24px;
             }
+
             .btnMode {
                 display: flex;
                 justify-content: space-evenly;
@@ -256,3 +257,10 @@ body {
         }
     }
 }
+
+.btnModeActive {
+    transform: scale(0.9);
+    border: red 1px solid;
+    filter: sepia(100%) hue-rotate(165deg) saturate(500%);
+}
+

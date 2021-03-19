@@ -501,6 +501,14 @@ template {
   font-weight: 500;
 }
 
+.lock .car img:nth-child(2) {
+  left: 70px;
+  top: 90px;
+  width: 50%;
+  -webkit-animation: light 3s ease  infinite;
+          animation: light 3s ease  infinite;
+}
+
 .lock .car img {
   top: 100px;
   left: 147px;
@@ -560,6 +568,42 @@ template {
 .lock .lockFooter p {
   font-weight: 500;
   color: #FDFDFD;
+}
+
+@-webkit-keyframes light {
+  0% {
+    opacity: 0.2;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes light {
+  0% {
+    opacity: 0.2;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
 }
 
 .index {
@@ -681,8 +725,22 @@ template {
   margin-top: 0px;
 }
 
-.index .indexCar .teslaIndex {
+.index .indexCar .indexTesla {
+  position: relative;
+}
+
+.index .indexCar .indexTesla .teslaIndex {
   width: 100%;
+}
+
+.index .indexCar .indexTesla img:nth-child(2) {
+  position: absolute;
+  left: 15px;
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+  opacity: 0;
 }
 
 .index .indexCar .status {
@@ -811,6 +869,83 @@ template {
   cursor: -webkit-grabbing;
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
+}
+
+.animLight {
+  -webkit-animation: lightIndex 3s ease infinite;
+          animation: lightIndex 3s ease infinite;
+}
+
+@-webkit-keyframes lightIndex {
+  0% {
+    opacity: 0.2;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  20% {
+    opacity: 0.1;
+  }
+  30% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.2;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes lightIndex {
+  0% {
+    opacity: 0.2;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  20% {
+    opacity: 0.1;
+  }
+  30% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.2;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 body {
@@ -1091,9 +1226,7 @@ body main {
 
 .ac .acContent .speed .speedSetting .speedBar .barCircle {
   top: 50%;
-  left: calc(25% - 14px);
-  -webkit-transform: translate(0%, -50%);
-          transform: translate(0%, -50%);
+  left: 25%;
   position: absolute;
   width: 28px;
   height: 28px;
@@ -1104,6 +1237,11 @@ body main {
   -webkit-box-shadow: 4px 6px 20px rgba(0, 0, 0, 0.35);
           box-shadow: 4px 6px 20px rgba(0, 0, 0, 0.35);
   border-radius: 30px;
+}
+
+.ac .acContent .mode {
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
 }
 
 .ac .acContent .mode h4 {
@@ -1153,5 +1291,13 @@ body main {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.btnModeActive {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  border: red 1px solid;
+  -webkit-filter: sepia(100%) hue-rotate(165deg) saturate(500%);
+          filter: sepia(100%) hue-rotate(165deg) saturate(500%);
 }
 /*# sourceMappingURL=style.css.map */

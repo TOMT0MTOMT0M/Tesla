@@ -76,6 +76,13 @@
                 font-weight: 500;
             }
         }
+        img:nth-child(2) {
+            left: 70px;
+            top: 90px;
+            width: 50%;
+            animation: light 3s ease  infinite ;
+        }
+
         img {
             top: 100px;
             left: 147px;
@@ -102,7 +109,8 @@
             border: 1px solid #016bb8;
             -webkit-box-shadow: 10px 15px 40px #000000, -10px -15px 40px #2f393d;
             box-shadow: 10px 15px 40px #000000, -10px -15px 40px #2f393d;
-            &:hover,&:active{
+            &:hover,
+            &:active {
                 filter: grayscale(1);
                 transform: scale(1.2);
             }
@@ -117,5 +125,24 @@
             font-weight: 500;
             color: $white;
         }
+    }
+}
+
+
+@keyframes light {
+    0% {
+        opacity: 0.2;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.2;
     }
 }
