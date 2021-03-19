@@ -2,6 +2,8 @@ let btn = document.querySelector(".btnOn");
 let acOpen = false;
 let ac = document.querySelector(".ac");
 let newText = document.querySelector(".temperture .stats")
+let off = document.querySelector(".off");
+let kmBool = false;
 
 
 let bar = new ProgressBar.Circle(container, {
@@ -33,14 +35,12 @@ let bar = new ProgressBar.Circle(container, {
 });
 
 function random() {
-    btn.classList.add("btnOnActive");
     let precision = 10; // 2 decimals
     let randomnum = Math.floor(Math.random() * (2 * precision - 1 * precision) + 1 * precision) / (1 * precision);
     bar.animate((randomnum - 1));  // Number from 0.0 to 1.0 </script>
 }
 
 function stopBar() {
-
     if (acOpen === false) {
         acOpen = true;
         random();
@@ -50,5 +50,20 @@ function stopBar() {
     }
 }
 btn.addEventListener("click", stopBar);
+btn.addEventListener("click", kmText);
 
+function kmText() {
+    btn.classList.toggle("btnOnActive");
+    document.querySelector("#container svg").classList.toggle("degreeOff")
+    if (kmBool === false) {
+        off.innerHTML = "on";
+        kmBool = true;
+    } else {
+        off.innerHTML = "off";
+        kmBool = false;
+    }
+}
 
+window.onload = function onLoad() {
+    document.querySelector("#container svg").classList.add("degreeOff")
+}

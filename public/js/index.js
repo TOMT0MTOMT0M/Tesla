@@ -2,21 +2,30 @@ let lock = document.querySelector(".lock")
 let openLock = document.querySelector(".btnLock")
 let car = document.querySelector(".teslaIndex")
 let light = document.querySelector(".lightTeslaIndex")
-
+let menu = document.querySelector(".btnMenu")
+let km;
 
 function openApp() {
-    let rangeText = document.querySelector(".range .stats")
-    let batText = document.querySelector(".battery .stats")
-    let range = Math.floor(Math.random() * 1000) + 1;
-    rangeText.innerHTML = range + "km";
-    document.querySelector(".km p").innerHTML = range + "km";
-    let battery = Math.floor(Math.random() * 100) + 1;
-    batText.innerHTML = battery + "%";
-    lock.classList.toggle("lockOpen")
+    if (km===true){
+        lock.classList.toggle("lockOpen")
+    } else {
+        km = true
+        let rangeText = document.querySelector(".range .stats")
+        let batText = document.querySelector(".battery .stats")
+        let range = Math.floor(Math.random() * 1000) + 1;
+        rangeText.innerHTML = range + "km";
+        document.querySelector(".km p").innerHTML = range + "km";
+        let battery = Math.floor(Math.random() * 100) + 1;
+        batText.innerHTML = battery + "%";
+        lock.classList.toggle("lockOpen")
+    }
 }
 
-openLock.addEventListener("touchstart", openApp)
+
 openLock.addEventListener("click", openApp)
+menu.addEventListener("click", function(){
+    lock.classList.toggle("lockOpen")
+})
 
 const slider = document.querySelector('.scroll');
 let isDown = false;

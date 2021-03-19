@@ -51,23 +51,29 @@ function addProgram() {
 program.addEventListener("click", addProgram)
 
 
-
 let doLoop = false;
 let progress = document.querySelector(".innerDiv");
 
 function loopy() {
     if (doLoop === true) {
         setTimeout(function () {
+            let ms = document.querySelector("#container svg");
             let x = document.querySelector(".barCircle");
-            t=parseInt(x.style.left, 10);
-            p = (x.offsetHeight / 2)+10;
-            let finalValue = (t + p)+"px" ;
+            t = parseInt(x.style.left, 10);
+            p = (x.offsetHeight / 2) + 10;
+            let finalValue = (t + p) + "px";
             progress.style.width = finalValue;
-            console.log(finalValue);
+            function percent() {
+                total = (t + p);
+                max = 292;
+                msValue = 100 - ((total * 100) / max);
+                msValueFinal = (msValue * max) / 100;
+                return msValueFinal;
+            }
+            ms.style.animationDuration =300 + percent() + "ms";
             loopy();
         }, 11);
     }
-
 };
 $(document).on("mousedown", ".barCircle", function () {
     doLoop = true;

@@ -19,7 +19,7 @@ body {
     transition: all 0.1s linear;
     position: fixed;
     width: 100%;
-    height: 130px;
+    height: 50px;
     bottom: -3%;
     background: #272a30;
     border-top-right-radius: 60px;
@@ -40,6 +40,7 @@ body {
         justify-content: space-between;
         align-items: center;
         position: relative;
+        flex-direction: column;
         &:after {
             box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.25);
             border-radius: 20px;
@@ -52,47 +53,6 @@ body {
             height: 4px;
             width: 15%;
         }
-        div:nth-child(1) {
-            margin-left: 40px;
-            margin-top: 25px;
-            margin-bottom: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            p,
-            h4 {
-                margin: 0;
-            }
-            p {
-                margin-top: 8px;
-                color: $grey;
-                max-width: 215px;
-            }
-        }
-        .btnOnActive {
-            -webkit-filter: grayscale(1);
-            filter: grayscale(1);
-        }
-        .btnOn {
-            transition: all 1s ease;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            margin-right: 40px;
-            position: relative;
-            z-index: 1;
-            background: linear-gradient(320.66deg, #016bb8 14.75%, #11a8fd 84.81%);
-            border: 1px solid #016bb8;
-            box-shadow: 10px 15px 40px #000000, -10px -15px 40px #2f393d;
-            img {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 20px;
-                height: 20px;
-            }
-        }
     }
     .acContent {
         width: 100%;
@@ -102,6 +62,49 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        padding-top: 25px;
+        .acOn {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            div {
+                z-index: 1;
+                p,
+                h4 {
+                    margin: 0;
+                }
+                p {
+                    margin-top: 8px;
+                    color: $grey;
+                    max-width: 215px;
+                }
+            }
+            .btnOnActive {
+                -webkit-filter: grayscale(1);
+                filter: grayscale(1);
+            }
+            .btnOn {
+                transition: all 1s ease;
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                position: relative;
+                z-index: 1;
+                background: linear-gradient(320.66deg, #016bb8 14.75%, #11a8fd 84.81%);
+                border: 1px solid #016bb8;
+                box-shadow: 10px 15px 40px #000000, -10px -15px 40px #2f393d;
+                img {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
         .degre {
             width: 100%;
             display: flex;
@@ -110,18 +113,22 @@ body {
                 z-index: 2;
                 background: linear-gradient(318.21deg, #202428 14.05%, #131314 85.29%);
                 box-shadow: 20px 20px 70px #141415, -20px -20px 70px #485057;
-                width: 250px;
-                height: 250px;
+                width: 200px;
+                height: 200px;
                 border-radius: 1000px;
                 position: relative;
                 #container {
+                    transition: all 1s ease;
                     position: absolute;
-                    width: 215px;
-                    height: 215px;
+                    width: 170px;
+                    height: 170px;
                     border-radius: 50%;
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%, -50%);
+                    svg{
+                        animation: speed  linear infinite;
+                    }
                     &:after {
                         content: "";
                         position: absolute;
@@ -165,8 +172,8 @@ body {
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            h4{
-                margin-bottom:0px;
+            h4 {
+                margin-bottom: 0px;
             }
             .speedSetting {
                 width: 100%;
@@ -189,7 +196,7 @@ body {
                     border-radius: 100px;
                     margin-bottom: 40px;
                     .innerDiv {
-                        width: 85px;
+                        width: 0px;
                         position: absolute;
                         height: 6px;
                         background: linear-gradient(
@@ -205,7 +212,7 @@ body {
                     }
                     .barCircle {
                         top: 50%;
-                        left: 60px;
+                        left: 0px;
                         position: absolute;
                         width: 28px;
                         height: 28px;
@@ -268,3 +275,16 @@ body {
     filter: sepia(100%) hue-rotate(165deg) saturate(500%);
 }
 
+.degreeOff{
+    transition: all 1s ease;
+    animation-play-state: paused !important;
+    filter: grayscale(1);
+}
+
+@keyframes speed {
+    from {
+        transform: rotate(0turn);
+    }to{
+        transform: rotate(1turn);
+    }
+}

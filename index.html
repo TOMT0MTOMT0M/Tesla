@@ -43,7 +43,7 @@
                 </div>
             </section>
             <footer class="lockFooter">
-                <h2>A/C is turned on</h2>
+                <h2>A/C is turned <span >off</span></h2>
                 <div class="btnLock"><img src="public\svg\lock.svg" alt="lock"></div>
                 <p>Tap to open the car</p>
             </footer>
@@ -64,9 +64,12 @@
             </header>
             <section class="indexCar">
                 <div class="indexTesla">
-                    <img class="teslaIndex" src="public\svg\teslaIndex.png" alt="teslatruck">
-                    <img class="lightTeslaIndex" src="public\svg\teslaIndexLight.svg" alt="">
+                    <div> <img class="teslaIndex" src="public\svg\teslaIndex.png" alt="teslatruck"> <img
+                            class="lightTeslaIndex" src="public\svg\teslaIndexLight.svg" alt="">
+                    </div>
                 </div>
+
+
                 <h4>Status</h4>
 
                 <div class="status">
@@ -94,7 +97,7 @@
                         </div>
                         <div class="climate">
                             <p>Climate</p>
-                            <h2>A/C is ON</h2>
+                            <h2>A/C is <span >off</span></h2>
                         </div>
                         <div class="tires">
                             <p>Tires</p>
@@ -109,17 +112,19 @@
             </div>
             <footer class="ac">
                 <header class="acHeader">
-                    <div>
-                        <h4>A/C is ON</h4>
-                        <p>Tap to turn off or swipe up for a fast setup</p>
-                    </div>
-                    <div class="btnOn"><img src="public\svg\power.svg" alt=""></div>
                 </header>
                 <div class="acContent">
+                    <div class="acOn">
+                        <div>
+                            <h4>A/C is <span class="off">off</span></h4>
+                            <p>Tap to turn off or swipe up for a fast setup</p>
+                        </div>
+                        <div class="btnOn"><img src="public\svg\power.svg" alt=""></div>
+                    </div>
                     <section class="degre">
                         <div class="outerCircle">
                             <svg viewBox="0 0 100 100"
-                                style="position:absolute;top: 18px;left: 18px;display: block; width: 86%;z-index:-1;">
+                                style="position:absolute;top: 18px;left: 18px;display: block; width: 83%;z-index:-1;">
                                 <path d="M 50,50 m 0,-40 a 40,40 0 1 1 0,80 a 40,40 0 1 1 0,-80"
                                     stroke="rgb(17,168,253)" stroke-width="20" fill-opacity="0"
                                     style="stroke: #1F2124;"></path>

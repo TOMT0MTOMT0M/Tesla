@@ -396,8 +396,8 @@ template {
 }
 
 .lock {
-  -webkit-transition: 0.3s all ease-in;
-  transition: 0.3s all ease-in;
+  -webkit-transition: 0.6s 1s all ease-in;
+  transition: 0.6s 1s all ease-in;
   height: calc(var(--vh, 1vh) * 100);
   width: 100%;
   display: -webkit-box;
@@ -505,6 +505,8 @@ template {
   left: 70px;
   top: 90px;
   width: 50%;
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
   -webkit-animation: light 3s ease  infinite;
           animation: light 3s ease  infinite;
 }
@@ -729,18 +731,25 @@ template {
   position: relative;
 }
 
-.index .indexCar .indexTesla .teslaIndex {
+.index .indexCar .indexTesla div {
+  width: 100%;
+  position: relative;
+}
+
+.index .indexCar .indexTesla div .teslaIndex {
   width: 100%;
 }
 
-.index .indexCar .indexTesla img:nth-child(2) {
+.index .indexCar .indexTesla div img:nth-child(2) {
   position: absolute;
-  left: 15px;
   -webkit-filter: blur(5px);
           filter: blur(5px);
-  -webkit-transform: scale(0.7);
-          transform: scale(0.7);
   opacity: 0;
+  left: 50%;
+  -webkit-transform: translate(-33%, -100%);
+          transform: translate(-33%, -100%);
+  top: 50%;
+  width: 70%;
 }
 
 .index .indexCar .status {
@@ -962,7 +971,7 @@ body main {
   transition: all 0.1s linear;
   position: fixed;
   width: 100%;
-  height: 130px;
+  height: 50px;
   bottom: -3%;
   background: #272a30;
   border-top-right-radius: 60px;
@@ -992,6 +1001,10 @@ body main {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .ac .acHeader:after {
@@ -1009,63 +1022,6 @@ body main {
   width: 15%;
 }
 
-.ac .acHeader div:nth-child(1) {
-  margin-left: 40px;
-  margin-top: 25px;
-  margin-bottom: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.ac .acHeader div:nth-child(1) p,
-.ac .acHeader div:nth-child(1) h4 {
-  margin: 0;
-}
-
-.ac .acHeader div:nth-child(1) p {
-  margin-top: 8px;
-  color: #7F8489;
-  max-width: 215px;
-}
-
-.ac .acHeader .btnOnActive {
-  -webkit-filter: grayscale(1);
-  filter: grayscale(1);
-}
-
-.ac .acHeader .btnOn {
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  margin-right: 40px;
-  position: relative;
-  z-index: 1;
-  background: linear-gradient(320.66deg, #016bb8 14.75%, #11a8fd 84.81%);
-  border: 1px solid #016bb8;
-  -webkit-box-shadow: 10px 15px 40px #000000, -10px -15px 40px #2f393d;
-          box-shadow: 10px 15px 40px #000000, -10px -15px 40px #2f393d;
-}
-
-.ac .acHeader .btnOn img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
-}
-
 .ac .acContent {
   width: 100%;
   position: absolute;
@@ -1081,6 +1037,65 @@ body main {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding-top: 25px;
+}
+
+.ac .acContent .acOn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.ac .acContent .acOn div {
+  z-index: 1;
+}
+
+.ac .acContent .acOn div p,
+.ac .acContent .acOn div h4 {
+  margin: 0;
+}
+
+.ac .acContent .acOn div p {
+  margin-top: 8px;
+  color: #7F8489;
+  max-width: 215px;
+}
+
+.ac .acContent .acOn .btnOnActive {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+.ac .acContent .acOn .btnOn {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(320.66deg, #016bb8 14.75%, #11a8fd 84.81%);
+  border: 1px solid #016bb8;
+  -webkit-box-shadow: 10px 15px 40px #000000, -10px -15px 40px #2f393d;
+          box-shadow: 10px 15px 40px #000000, -10px -15px 40px #2f393d;
+}
+
+.ac .acContent .acOn .btnOn img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
 }
 
 .ac .acContent .degre {
@@ -1098,21 +1113,28 @@ body main {
   background: linear-gradient(318.21deg, #202428 14.05%, #131314 85.29%);
   -webkit-box-shadow: 20px 20px 70px #141415, -20px -20px 70px #485057;
           box-shadow: 20px 20px 70px #141415, -20px -20px 70px #485057;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   border-radius: 1000px;
   position: relative;
 }
 
 .ac .acContent .degre .outerCircle #container {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
   position: absolute;
-  width: 215px;
-  height: 215px;
+  width: 170px;
+  height: 170px;
   border-radius: 50%;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.ac .acContent .degre .outerCircle #container svg {
+  -webkit-animation: speed  linear infinite;
+          animation: speed  linear infinite;
 }
 
 .ac .acContent .degre .outerCircle #container:after {
@@ -1217,7 +1239,7 @@ body main {
 }
 
 .ac .acContent .speed .speedSetting .speedBar .innerDiv {
-  width: 85px;
+  width: 0px;
   position: absolute;
   height: 6px;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 48.67%, rgba(255, 255, 255, 0.04) 59.86%), linear-gradient(89.97deg, #016bb8 2.65%, #0782db 30.1%, #0f9ceb 59.17%, #11a8fd 101.95%);
@@ -1230,7 +1252,7 @@ body main {
 
 .ac .acContent .speed .speedSetting .speedBar .barCircle {
   top: 50%;
-  left: 60px;
+  left: 0px;
   position: absolute;
   width: 28px;
   height: 28px;
@@ -1304,5 +1326,36 @@ body main {
   border: red 1px solid;
   -webkit-filter: sepia(100%) hue-rotate(165deg) saturate(500%);
           filter: sepia(100%) hue-rotate(165deg) saturate(500%);
+}
+
+.degreeOff {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-animation-play-state: paused !important;
+          animation-play-state: paused !important;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
+@-webkit-keyframes speed {
+  from {
+    -webkit-transform: rotate(0turn);
+            transform: rotate(0turn);
+  }
+  to {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+
+@keyframes speed {
+  from {
+    -webkit-transform: rotate(0turn);
+            transform: rotate(0turn);
+  }
+  to {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
 }
 /*# sourceMappingURL=style.css.map */
