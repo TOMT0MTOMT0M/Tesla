@@ -15,7 +15,7 @@ function openApp() {
     lock.classList.toggle("lockOpen")
 }
 
-openLock.addEventListener("touchend", openApp)
+openLock.addEventListener("touchstart", openApp)
 openLock.addEventListener("click", openApp)
 
 const slider = document.querySelector('.scroll');

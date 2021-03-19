@@ -396,8 +396,8 @@ template {
 }
 
 .lock {
-  -webkit-transition: 1s all ease-in;
-  transition: 1s all ease-in;
+  -webkit-transition: 0.3s all ease-in;
+  transition: 0.3s all ease-in;
   height: calc(var(--vh, 1vh) * 100);
   width: 100%;
   display: -webkit-box;
@@ -1173,6 +1173,10 @@ body main {
           flex-direction: column;
 }
 
+.ac .acContent .speed h4 {
+  margin-bottom: 0px;
+}
+
 .ac .acContent .speed .speedSetting {
   width: 100%;
   display: -webkit-box;
@@ -1209,11 +1213,11 @@ body main {
   -webkit-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.75), inset -2px -2px 2px #4e5154;
           box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.75), inset -2px -2px 2px #4e5154;
   border-radius: 100px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .ac .acContent .speed .speedSetting .speedBar .innerDiv {
-  width: 25%;
+  width: 85px;
   position: absolute;
   height: 6px;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 48.67%, rgba(255, 255, 255, 0.04) 59.86%), linear-gradient(89.97deg, #016bb8 2.65%, #0782db 30.1%, #0f9ceb 59.17%, #11a8fd 101.95%);
@@ -1226,7 +1230,7 @@ body main {
 
 .ac .acContent .speed .speedSetting .speedBar .barCircle {
   top: 50%;
-  left: 25%;
+  left: 60px;
   position: absolute;
   width: 28px;
   height: 28px;
@@ -1242,12 +1246,13 @@ body main {
 .ac .acContent .mode {
   -webkit-transition: 1s ease all;
   transition: 1s ease all;
+  padding-bottom: 100px;
 }
 
 .ac .acContent .mode h4 {
   text-align: center;
   margin-top: 0px;
-  margin-bottom: 24px;
+  margin-bottom: 10px;
 }
 
 .ac .acContent .mode .btnMode {

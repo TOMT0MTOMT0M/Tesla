@@ -7,7 +7,7 @@ $(function () {
         handle: $(".acHeader"),
     });
     // Get the axis option, after initialization.
-    var axis = $('.ac').draggable('option', 'axis');
+    let axis = $('.ac').draggable('option', 'axis');
     // Set the axis option, after initialization.
     $('.ac').draggable('option', 'axis', 'y');
 
@@ -20,7 +20,7 @@ $(function () {
         containment: '.speedBar',
     });
     // Get the axis option, after initialization.
-    var axis = $('.ac').draggable('option', 'axis');
+    let axis = $('.ac').draggable('option', 'axis');
     // Set the axis option, after initialization.
     $('.barCircle').draggable('option', 'axis', 'x');
 });
@@ -33,20 +33,46 @@ let coolDiv = document.querySelector(".cool div")
 let program = document.querySelector(".program")
 let programDiv = document.querySelector(".program div")
 
-function addAuto(){
+function addAuto() {
     autoDiv.classList.toggle("btnModeActive")
 }
-auto.addEventListener("click",addAuto)
-function addDry(){
+auto.addEventListener("click", addAuto)
+function addDry() {
     dryDiv.classList.toggle("btnModeActive")
 }
-dry.addEventListener("click",addDry)
-function addCool(){
+dry.addEventListener("click", addDry)
+function addCool() {
     coolDiv.classList.toggle("btnModeActive")
 }
-cool.addEventListener("click",addCool)
-function addProgram(){
+cool.addEventListener("click", addCool)
+function addProgram() {
     programDiv.classList.toggle("btnModeActive")
 }
-program.addEventListener("click",addProgram)
+program.addEventListener("click", addProgram)
 
+
+
+let doLoop = false;
+let progress = document.querySelector(".innerDiv");
+
+function loopy() {
+    if (doLoop === true) {
+        setTimeout(function () {
+            let x = document.querySelector(".barCircle");
+            t=parseInt(x.style.left, 10);
+            p = (x.offsetHeight / 2)+10;
+            let finalValue = (t + p)+"px" ;
+            progress.style.width = finalValue;
+            console.log(finalValue);
+            loopy();
+        }, 11);
+    }
+
+};
+$(document).on("mousedown", ".barCircle", function () {
+    doLoop = true;
+    loopy();
+});
+$(document).on("mouseup mouseout", ".barCircle", function () {
+    doLoop = false;
+});
